@@ -8,4 +8,7 @@ public interface MemberMapper {
 
     // 회원 가입
     public void insertMember(MemberVO memberVO);
+
+    // 로그인
+    public Long selectMember(MemberVO memberVO);
 }
