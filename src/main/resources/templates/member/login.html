@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>로그인</title>
+    <style>
+        .join-a {
+            cursor: pointer;
+        }
+
+        .join-b {
+            cursor: pointer;
+        }
+
+        .info-text {
+            margin-top : 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+
+            <!--로그인 창-->
+            <div class="login-box">
+                <img src="/image/logo.png" class="logo">
+                <div class="input-box">
+                    <input type="text" placeholder="ID" name="memberIdentification">
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" name="memberPassword">
+                </div>
+                <button type="button" class="btn">Login</button>
+                <div class="join-button">
+                    <a href="/member/join" class="info-text">회원이 아니신가요?</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</html>

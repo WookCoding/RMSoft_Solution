@@ -21,4 +21,7 @@ public class MemberDAO {
         return memberMapper.findById(memberVO);
     }
 
+//    아이디 중복검사
+    public Long findByMemberIdentification (String memberIdentification){ return memberMapper.findByMemberIdentification(memberIdentification); }
+
 }

@@ -15,6 +15,13 @@ public class MemberVO {
     private String memberIdentification;
     private String memberPassword;
     private String memberName;
+    private String memberCompanyName;
+    private String memberEmail;
+    private String phoneNumber;
     private Date memberRegisterDate;
     private Date memberUpdateDate;
+
+    public void setMemberPassword(String memberPassword) {
+        this.memberPassword = memberPassword;
+    }
 }

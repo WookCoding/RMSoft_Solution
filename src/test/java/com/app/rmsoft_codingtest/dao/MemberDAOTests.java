@@ -40,4 +40,12 @@ public class MemberDAOTests {
         log.info("회원 번호 : " + memberDAO.findById(memberVO));
     }
 
+
+    //    아이디 중복검사 테스트
+    @Test
+    public void findByMemberIdentificationTest(){
+        String memberIdentification = "test1234";
+        log.info("아이디 갯수 : "  + memberDAO.findByMemberIdentification(memberIdentification));
+    }
+
 }

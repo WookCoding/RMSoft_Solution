@@ -11,4 +11,7 @@ public interface MemberMapper {
 
     // 로그인
     public Long findById(MemberVO memberVO);
+
+    // 아이디 중복검사
+    public Long findByMemberIdentification(String memberIdentification);
 }

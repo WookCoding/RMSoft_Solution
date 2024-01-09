@@ -9,4 +9,8 @@ public interface MemberService {
 
     // 로그인
     public Long login(MemberVO memberVO);
+
+    // 아이디 중복검사
+    public Long idCheck(String memberIdentification);
+
 }

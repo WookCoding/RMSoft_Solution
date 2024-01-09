@@ -31,6 +31,11 @@ public class MemberServiceImplTest {
     @InjectMocks
     private MemberServiceImpl memberServiceImpl;
 
+    @BeforeEach
+    public void setUp() {
+        reset(memberDAO);
+    }
+
     public MemberVO setUpMemberVO(){
         return MemberVO.builder()
                 .memberName("홍길동")
@@ -50,9 +55,10 @@ public class MemberServiceImplTest {
 
     // 로그인
     @Test
-    @DisplayName("로그인 테스트")
+    @DisplayName("로그인 테스트 - 성공")
     public void loginTest(){
         MemberVO memberVO = setUpMemberVO();
+
         when(memberServiceImpl.login(memberVO)).thenReturn(1L);
         Long memberId = memberServiceImpl.login(memberVO);
         assertEquals(1L,memberId);

@@ -29,13 +29,21 @@ public class MemberMapperTests {
 
 //    로그인 테스트
     @Test
-    public void selectMemberIdTest(){
+    public void findByMemberIdTest(){
         MemberVO memberVO = MemberVO.builder()
                 .memberIdentification("test1234")
                 .memberPassword(new String(Base64.getEncoder().encode("hello".getBytes())))
                 .build();
 
         log.info("회원 번호 : " + memberMapper.findById(memberVO));
+    }
+
+//    아이디 중복검사 테스트
+    @Test
+    public void findByMemberIdentificationTest(){
+        String memberIdentification = "test1234";
+
+        log.info("아이디 갯수 : "  + memberMapper.findByMemberIdentification(memberIdentification));
     }
 
 }
