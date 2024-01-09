@@ -35,7 +35,7 @@ public class MemberMapperTests {
                 .memberPassword(new String(Base64.getEncoder().encode("hello".getBytes())))
                 .build();
 
-        log.info("회원 번호 : " + memberMapper.selectMemberId(memberVO));
+        log.info("회원 번호 : " + memberMapper.findById(memberVO));
     }
 
 }

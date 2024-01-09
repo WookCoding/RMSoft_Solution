@@ -10,5 +10,5 @@ public interface MemberMapper {
     public void insertMember(MemberVO memberVO);
 
     // 로그인
-    public Long selectMemberId(MemberVO memberVO);
+    public Long findById(MemberVO memberVO);
 }

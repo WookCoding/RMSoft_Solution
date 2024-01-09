@@ -37,7 +37,7 @@ public class MemberDAOTests {
                 .memberPassword(new String(Base64.getEncoder().encode("hong1234".getBytes())))
                 .build();
 
-        log.info("회원 번호 : " + memberDAO.selectMemberId(memberVO));
+        log.info("회원 번호 : " + memberDAO.findById(memberVO));
     }
 
 }

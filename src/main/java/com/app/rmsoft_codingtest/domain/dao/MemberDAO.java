@@ -17,8 +17,8 @@ public class MemberDAO {
     }
 
 //    로그인
-    public Long selectMemberId(MemberVO memberVO){
-        return memberMapper.selectMemberId(memberVO);
+    public Long findById(MemberVO memberVO){
+        return memberMapper.findById(memberVO);
     }
 
 }
