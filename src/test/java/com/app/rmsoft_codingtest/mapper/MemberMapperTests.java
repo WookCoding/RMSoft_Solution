@@ -27,11 +27,11 @@ public class MemberMapperTests {
 
 //    로그인 테스트
     @Test
-    public void selectMemberTest(){
+    public void selectMemberIdTest(){
         MemberVO memberVO = new MemberVO();
         memberVO.setMemberIdentification("test1234");
         memberVO.setMemberPassword(new String(Base64.getEncoder().encode("hello".getBytes())));
-        log.info("회원 번호 : " + memberMapper.selectMember(memberVO));
+        log.info("회원 번호 : " + memberMapper.selectMemberId(memberVO));
     }
 
 }
