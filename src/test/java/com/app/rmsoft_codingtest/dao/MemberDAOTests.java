@@ -20,19 +20,22 @@ public class MemberDAOTests {
 //    회원가입
     @Test
     public void insertMemberTest(){
-        MemberVO memberVO = new MemberVO();
-        memberVO.setMemberName("홍길동");
-        memberVO.setMemberIdentification("test123");
-        memberVO.setMemberPassword(new String(Base64.getEncoder().encode("hong1234".getBytes())));
+        MemberVO memberVO = MemberVO.builder()
+                .memberName("홍길동")
+                .memberIdentification("test123")
+                .memberPassword(new String(Base64.getEncoder().encode("hong1234".getBytes())))
+                .build();
+
         memberDAO.insertMember(memberVO);
     }
 
 //    로그인
     @Test
     public void selectMemberIdTest(){
-        MemberVO memberVO = new MemberVO();
-        memberVO.setMemberIdentification("test123");
-        memberVO.setMemberPassword(new String(Base64.getEncoder().encode("hong1234".getBytes())));
+        MemberVO memberVO = MemberVO.builder()
+                .memberIdentification("test123")
+                .memberPassword(new String(Base64.getEncoder().encode("hong1234".getBytes())))
+                .build();
 
         log.info("회원 번호 : " + memberDAO.selectMemberId(memberVO));
     }

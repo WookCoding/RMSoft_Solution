@@ -18,19 +18,23 @@ public class MemberMapperTests {
 //    회원가입 테스트
     @Test
     public void insertMemberTest(){
-        MemberVO memberVO = new MemberVO();
-        memberVO.setMemberName("임종욱");
-        memberVO.setMemberIdentification("test1234");
-        memberVO.setMemberPassword(new String(Base64.getEncoder().encode("hello".getBytes())));
+        MemberVO memberVO = MemberVO.builder()
+                .memberName("임종욱")
+                .memberIdentification("test1234")
+                .memberPassword(new String(Base64.getEncoder().encode("hello".getBytes())))
+                .build();
+
         memberMapper.insertMember(memberVO);
     }
 
 //    로그인 테스트
     @Test
     public void selectMemberIdTest(){
-        MemberVO memberVO = new MemberVO();
-        memberVO.setMemberIdentification("test1234");
-        memberVO.setMemberPassword(new String(Base64.getEncoder().encode("hello".getBytes())));
+        MemberVO memberVO = MemberVO.builder()
+                .memberIdentification("test1234")
+                .memberPassword(new String(Base64.getEncoder().encode("hello".getBytes())))
+                .build();
+
         log.info("회원 번호 : " + memberMapper.selectMemberId(memberVO));
     }
 

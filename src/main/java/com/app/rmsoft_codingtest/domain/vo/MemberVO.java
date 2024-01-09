@@ -1,10 +1,15 @@
 package com.app.rmsoft_codingtest.domain.vo;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Builder
+@ToString
 public class MemberVO {
     private Long memberId;
     private String memberIdentification;
