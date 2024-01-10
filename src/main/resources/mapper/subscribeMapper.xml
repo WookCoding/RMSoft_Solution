@@ -3,10 +3,10 @@
 <mapper namespace="com.app.rmsoft_codingtest.mapper.SubscribeMapper">
 
     <!-- 구독 신청 -->
-    <insert id="insertSubscribe" parameterType="subscribeVO">
+    <insert id="insert" parameterType="subscribeVO">
         insert into tbl_subscribe
-        (member_id, subscribe_type, subscribe_price, subscribe_period, subscribe_use_people, subscribe_storage_size, subscribe_start_date, subscribe_end_date)
-        values(#{memberId},#{subscribeType} , #{subscribePrice}, #{subscribePeriod}, #{subscribeUsePeople}, #{subscribeStorageSize}, #{subscribeStartDate}, #{subscribeEndDate})
+        (member_id, subscribe_form_id, subscribe_use_people, subscribe_storage_size, subscribe_start_date, subscribe_end_date)
+        values(#{memberId}, #{subscribeFormId}, #{subscribeUsePeople}, #{subscribeStorageSize}, #{subscribeStartDate}, #{subscribeEndDate})
     </insert>
 
 </mapper>
