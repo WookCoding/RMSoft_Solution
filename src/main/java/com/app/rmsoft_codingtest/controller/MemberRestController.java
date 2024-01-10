@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/memberRest/*")
+@RequestMapping("/member/*")
 public class MemberRestController {
 
     private final MemberServiceImpl memberService;
 
-    //    회원 가입
+    //  회원 가입
     @PostMapping("join")
     public void join(@RequestBody MemberVO memberVO) {
         memberService.join(memberVO);
@@ -25,7 +25,7 @@ public class MemberRestController {
         return memberService.login(memberVO);
     }
 
-    //    아이디 중복검사
+    //    아이디 중복 검사
     @GetMapping("idCheck")
     public Boolean idCheck(@RequestParam String memberIdentification) {
         return memberService.idCheck(memberIdentification) == 0;

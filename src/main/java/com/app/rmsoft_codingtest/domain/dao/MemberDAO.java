@@ -26,4 +26,7 @@ public class MemberDAO {
 
 //    회원 정보 찾기
     public MemberVO findById(Long memberId){return memberMapper.findById(memberId); }
+
+//    회원 정보 업데이트
+    public void updateMemberVO(MemberVO memberVO){ memberMapper.updateMemberVO(memberVO);}
 }

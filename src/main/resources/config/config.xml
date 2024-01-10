@@ -3,5 +3,7 @@
 <configuration>
     <typeAliases>
         <typeAlias type="com.app.rmsoft_codingtest.domain.vo.MemberVO" alias="memberVO"></typeAlias>
+        <typeAlias type="com.app.rmsoft_codingtest.domain.vo.SubscribeFormVO" alias="subScribeFormVO"></typeAlias>
+        <typeAlias type="com.app.rmsoft_codingtest.domain.vo.SubscribeVO" alias="subscribeVO"></typeAlias>
     </typeAliases>
 </configuration>

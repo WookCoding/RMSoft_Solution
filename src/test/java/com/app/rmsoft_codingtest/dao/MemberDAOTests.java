@@ -54,4 +54,22 @@ public class MemberDAOTests {
         log.info(memberDAO.findById(1L).getMemberName());
     }
 
+    // 회원 정보 update
+    @Test
+    public void updateMemberVOTest(){
+        MemberVO member = memberDAO.findById(1L);
+
+        MemberVO member2 = MemberVO.builder()
+                .memberId(member.getMemberId())
+                .memberEmail("test1234@naver.com")
+                .memberPhoneNumber(member.getMemberPhoneNumber())
+                .memberRegisterDate(member.getMemberRegisterDate())
+                .memberCompanyName(member.getMemberCompanyName())
+                .memberIdentification(member.getMemberIdentification())
+                .memberPassword(member.getMemberPassword())
+                .memberName(member.getMemberName())
+                .build();
+
+        memberDAO.updateMemberVO(member2);
+    }
 }

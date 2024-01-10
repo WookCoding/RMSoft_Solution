@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.rmsoft_codingtest.mapper.SubscribeFormMapper">
+
+    <!-- 구독 버전 추가 -->
+    <insert id="insert" parameterType="subscribeFormVO">
+        insert into tbl_subscribe_form
+            (subscribe_form_type, subscribe_form_price, subscribe_form_period)
+        values(#{subscribeFormType}, #{subscribeFormPrice}, #{subscribeFormPeriod})
+    </insert>
+
+    <!-- 구독 버전 목록 -->
+    <select id="findAll" resultType="subscribeFormVO">
+        select subscribe_form_id ,subscribe_form_type, subscribe_form_price, subscribe_form_period
+        from tbl_subscribe_form
+    </select>
+
+    <!-- 구독 버전 찾기 -->
+    <select id="findById" parameterType="long" resultType="subscribeFormVO">
+        select subscribe_form_id ,subscribe_form_type, subscribe_form_price, subscribe_form_period
+        from tbl_subscribe_form where subscribe_form_id = #{subscribeFormId}
+    </select>
+
+    <!-- 구독 버전 수정 -->
+    <update id="update" parameterType="subscribeFormVO">
+        update tbl_subscribe_form
+        set subscribe_form_type= #{subscribeFormType}, subscribe_form_price=#{subscribeFormPrice}, subscribe_form_period= #{subscribeFormPeriod}
+        where subscribe_form_id = #{subscribeFormId}
+    </update>
+
+    <!-- 구독 버전 삭제 -->
+    <delete id="delete">
+        delete from tbl_subscribe_form where subscribe_form_id = #{subscribeFormId}
+    </delete>
+
+</mapper>

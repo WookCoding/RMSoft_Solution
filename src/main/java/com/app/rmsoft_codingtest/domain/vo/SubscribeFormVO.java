@@ -1,16 +1,17 @@
 package com.app.rmsoft_codingtest.domain.vo;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import com.app.rmsoft_codingtest.domain.enums.SubscribeFormType;
+import lombok.*;
 
 @Getter
-@Builder
 @ToString
+@Builder
+@Setter
 public class SubscribeFormVO {
 
     private Long subscribeFormId;
-    private String subscribeFormName;
+    private SubscribeFormType subscribeFormType;
     private Long subscribeFormPrice;
     private Long subscribeFormPeriod;
+
 }
