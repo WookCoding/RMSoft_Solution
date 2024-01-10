@@ -13,4 +13,7 @@ public interface MemberService {
     // 아이디 중복검사
     public Long idCheck(String memberIdentification);
 
+    // 회원정보 찾기
+    public MemberVO findMemberVO(Long memberId);
+
 }

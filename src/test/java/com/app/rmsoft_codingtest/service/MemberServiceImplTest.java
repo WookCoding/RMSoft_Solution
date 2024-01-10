@@ -38,9 +38,9 @@ public class MemberServiceImplTest {
 
     public MemberVO setUpMemberVO(){
         return MemberVO.builder()
-                .memberName("홍길동")
+                .memberName("임종욱")
                 .memberIdentification("test1234")
-                .memberPassword(new String(Base64.getEncoder().encode("hong1234".getBytes())))
+                .memberPassword(new String(Base64.getEncoder().encode("hello".getBytes())))
                 .build();
     }
 
@@ -62,8 +62,7 @@ public class MemberServiceImplTest {
         when(memberServiceImpl.login(memberVO)).thenReturn(1L);
         Long memberId = memberServiceImpl.login(memberVO);
         assertEquals(1L,memberId);
-        verify(memberDAO, times(1)).findById(memberVO);
+        verify(memberDAO, times(1)).selectMemberId(memberVO);
     }
-
 
 }

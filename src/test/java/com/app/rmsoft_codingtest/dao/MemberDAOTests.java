@@ -37,7 +37,7 @@ public class MemberDAOTests {
                 .memberPassword(new String(Base64.getEncoder().encode("hong1234".getBytes())))
                 .build();
 
-        log.info("회원 번호 : " + memberDAO.findById(memberVO));
+        log.info("회원 번호 : " + memberDAO.selectMemberId(memberVO));
     }
 
 
@@ -46,6 +46,12 @@ public class MemberDAOTests {
     public void findByMemberIdentificationTest(){
         String memberIdentification = "test1234";
         log.info("아이디 갯수 : "  + memberDAO.findByMemberIdentification(memberIdentification));
+    }
+
+    // 회원 정보 찾기
+    @Test
+    public void findByIdTest(){
+        log.info(memberDAO.findById(1L).getMemberName());
     }
 
 }

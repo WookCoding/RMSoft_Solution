@@ -10,7 +10,7 @@
     </insert>
 
     <!-- 로그인 -->
-    <select id="findById" resultType="long">
+    <select id="selectMemberId" resultType="long">
         select member_id from tbl_member where member_identification = #{memberIdentification} and member_password = #{memberPassword}
     </select>
 
@@ -19,5 +19,16 @@
         select count(member_identification) from tbl_member where member_identification = #{memberIdentification}
     </select>
 
+    <!-- 회원 정보 찾기 -->
+    <select id="findById" parameterType="long" resultType="memberVO">
+        select member_id, member_identification, member_password, member_name, member_company_name, member_email, member_phone_number, member_register_date, member_update_date
+        from tbl_member where member_id = #{memberId}
+    </select>
 
+    <!-- 회원 정보 수정  -->
+    <update id="updateMemberVO" parameterType="memberVO">
+        update tbl_member
+        set member_identification=#{memberIdentification}, member_password=#{memberPassword}, member_name=#{memberName}, member_company_name=#{memberCompanyName}, member_email=#{memberEmail}, member_phone_number= #{memberPhoneNumber}, member_update_date = CURRENT_TIMESTAMP
+        where member_id = #{memberId}
+    </update>
 </mapper>

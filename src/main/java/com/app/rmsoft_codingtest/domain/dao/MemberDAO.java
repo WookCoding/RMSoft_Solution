@@ -17,11 +17,13 @@ public class MemberDAO {
     }
 
 //    로그인
-    public Long findById(MemberVO memberVO){
-        return memberMapper.findById(memberVO);
+    public Long selectMemberId(MemberVO memberVO){
+        return memberMapper.selectMemberId(memberVO);
     }
 
 //    아이디 중복검사
     public Long findByMemberIdentification (String memberIdentification){ return memberMapper.findByMemberIdentification(memberIdentification); }
 
+//    회원 정보 찾기
+    public MemberVO findById(Long memberId){return memberMapper.findById(memberId); }
 }

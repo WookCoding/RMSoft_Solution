@@ -17,7 +17,7 @@ public class MemberVO {
     private String memberName;
     private String memberCompanyName;
     private String memberEmail;
-    private String phoneNumber;
+    private String memberPhoneNumber;
     private Date memberRegisterDate;
     private Date memberUpdateDate;
 

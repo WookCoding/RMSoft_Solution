@@ -29,12 +29,17 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Long login(MemberVO memberVO) {
         memberVO.setMemberPassword(new String(Base64.getEncoder().encode(memberVO.getMemberPassword().getBytes())));
-        return memberDAO.findById(memberVO);
+        return memberDAO.selectMemberId(memberVO);
     }
 
     @Override
     public Long idCheck(String memberIdentification) {
         return memberDAO.findByMemberIdentification(memberIdentification);
+    }
+
+    @Override
+    public MemberVO findMemberVO(Long memberId) {
+        return memberDAO.findById(memberId);
     }
 
 }
