@@ -6,7 +6,6 @@ import lombok.*;
 @ToString
 @Builder
 @Setter
-@AllArgsConstructor
 public class SubscribeFormVO {
 
     private Long subscribeFormId;

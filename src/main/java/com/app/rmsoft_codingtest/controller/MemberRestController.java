@@ -1,6 +1,7 @@
 package com.app.rmsoft_codingtest.controller;
 
 import com.app.rmsoft_codingtest.domain.vo.MemberVO;
+import com.app.rmsoft_codingtest.service.MemberService;
 import com.app.rmsoft_codingtest.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/member/*")
 public class MemberRestController {
 
-    private final MemberServiceImpl memberService;
+    private final MemberService memberService;
 
     //  회원 가입
     @PostMapping("join")

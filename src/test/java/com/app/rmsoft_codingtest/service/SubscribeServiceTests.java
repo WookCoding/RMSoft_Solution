@@ -14,11 +14,11 @@ public class SubscribeServiceTests {
     private SubscribeService subscribeService;
 
     @Test
-    public void test(){
+    public void subscribeApplyTest(){
         SubscribeDTO subscribeDTO = SubscribeDTO.builder()
                 .memberId(1L)
                 .subscribeFormId(1L)
-                .subscribeStorageSize("1TB")
+                .subscribeStorageSize(1024L)
                 .subscribeUsePeople(4L)
                 .memberCompanyName("test컴퍼니")
                 .memberEmail("test@naver.com")

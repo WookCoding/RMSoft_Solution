@@ -28,7 +28,7 @@ public class SubscribeMapperTests {
 
         SubscribeVO subscribeVO = SubscribeVO.builder()
                 .subscribeFormId(1L)
-                .subscribeStorageSize("1TB")
+                .subscribeStorageSize(1024L)
                 .subscribeUsePeople(4L)
                 .memberId(1L)
                 .subscribeStartDate(dateTime)

@@ -24,7 +24,7 @@ public class SubscribeDTO {
 
     private Long subscribeId;
     private Long subscribeUsePeople;
-    private String subscribeStorageSize;
+    private Long subscribeStorageSize;
     private LocalDateTime subscribeStartDate;
     private LocalDateTime subscribeEndDate;
 

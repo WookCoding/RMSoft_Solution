@@ -15,7 +15,7 @@ public class SubscribeVO {
     private Long subscribeFormId;
     private Long memberId;
     private Long subscribeUsePeople;
-    private String subscribeStorageSize;
+    private Long subscribeStorageSize;
     private LocalDateTime subscribeStartDate;
     private LocalDateTime subscribeEndDate;
 
