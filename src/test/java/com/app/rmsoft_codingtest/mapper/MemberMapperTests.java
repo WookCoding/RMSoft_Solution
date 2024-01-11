@@ -58,8 +58,9 @@ public class MemberMapperTests {
         MemberVO memberVO = memberMapper.findById(1L);
 
         MemberVO memberVO1 = MemberVO.builder()
+                .memberId(memberVO.getMemberId())
                 .memberName(memberVO.getMemberName())
-                .memberPassword("test123451")
+                .memberPassword("test12345")
                 .memberEmail(memberVO.getMemberEmail())
                 .memberPhoneNumber(memberVO.getMemberPhoneNumber())
                 .memberIdentification(memberVO.getMemberIdentification())
