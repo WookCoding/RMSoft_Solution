@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.rmsoft_codingtest.mapper.SubscribeExtensionRequestMapper">
+
+        <!--    기간 연장 신청-->
+        <insert id="insert" parameterType="subscribeExtensionRequestVO">
+            insert into tbl_subscribe_extension_request
+            (member_id, subscribe_id, extension_period, request_date)
+            values(#{memberId}, #{subscribeId}, #{extensionPeriod}, #{requestDate})
+        </insert>
+</mapper>
