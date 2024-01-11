@@ -1,7 +1,6 @@
 package com.app.rmsoft_codingtest.dao;
 
 import com.app.rmsoft_codingtest.domain.dao.SubscribeFormDAO;
-import com.app.rmsoft_codingtest.domain.enums.SubscribeFormType;
 import com.app.rmsoft_codingtest.domain.vo.SubscribeFormVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -23,19 +22,19 @@ public class SubscribeFormDAOTests {
         SubscribeFormVO basic = SubscribeFormVO.builder()
                 .subscribeFormPrice(10000L)
                 .subscribeFormPeriod(3L)
-                .subscribeFormType(SubscribeFormType.BASIC)
+                .subscribeFormType("BASIC")
                 .build();
 
         SubscribeFormVO standard = SubscribeFormVO.builder()
                 .subscribeFormPrice(15000L)
                 .subscribeFormPeriod(6L)
-                .subscribeFormType(SubscribeFormType.STANDARD)
+                .subscribeFormType("STANDARD")
                 .build();
 
         SubscribeFormVO premium = SubscribeFormVO.builder()
                 .subscribeFormPrice(20000L)
                 .subscribeFormPeriod(12L)
-                .subscribeFormType(SubscribeFormType.PREMIUM)
+                .subscribeFormType("PREMIUM")
                 .build();
 
         subscribeFormDAO.insert(basic);
