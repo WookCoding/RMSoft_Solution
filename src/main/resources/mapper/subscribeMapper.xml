@@ -9,4 +9,15 @@
         values(#{memberId}, #{subscribeFormId}, #{subscribeUsePeople}, #{subscribeStorageSize}, #{subscribeStartDate}, #{subscribeEndDate})
     </insert>
 
+    <!-- 구독 찾기 -->
+    <select id="findById" parameterType="long" resultType="subscribeVO">
+        select subscribe_id, member_id, subscribe_form_id, subscribe_use_people, subscribe_storage_size, subscribe_start_date, subscribe_end_date
+        from tbl_subscribe
+        where subscribe_id = #{subscribeId}
+    </select>
+
+    <!-- 현재 시퀀스 값-->
+    <select id="currentSequence" resultType="long">
+        select subscribe_id from tbl_subscribe order by subscribe_id desc limit 1
+    </select>
 </mapper>

@@ -6,5 +6,10 @@
         <typeAlias type="com.app.rmsoft_codingtest.domain.vo.SubscribeFormVO" alias="subScribeFormVO"></typeAlias>
         <typeAlias type="com.app.rmsoft_codingtest.domain.vo.SubscribeVO" alias="subscribeVO"></typeAlias>
         <typeAlias type="com.app.rmsoft_codingtest.domain.vo.SubscribeExtensionRequestVO" alias="subscribeExtensionRequestVO"></typeAlias>
+        <typeAlias type="com.app.rmsoft_codingtest.domain.vo.StorageVO" alias="storageVO"></typeAlias>
+        <typeAlias type="com.app.rmsoft_codingtest.domain.vo.DashboardVO" alias="dashboardVO"></typeAlias>
+        <typeAlias type="com.app.rmsoft_codingtest.domain.dto.SubscribeDTO" alias="subscribeDTO"></typeAlias>
+        <typeAlias type="com.app.rmsoft_codingtest.domain.dto.SearchDTO" alias="searchDTO"></typeAlias>
+        <typeAlias type="com.app.rmsoft_codingtest.domain.dto.DashboardDTO" alias="dashboardDTO"></typeAlias>
     </typeAliases>
 </configuration>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.rmsoft_codingtest.mapper.StorageMapper">
+
+    <!-- 저장 공간 사용-->
+    <insert id="insert" parameterType="storageVO">
+        insert into tbl_storage
+        (member_id, subscribe_id, used_storage_size)
+        values (#{memberId}, #{subscribeId}, #{usedStorageSize})
+    </insert>
+
+    <!-- 사용 중인 구독서비스 총 사용량-->
+    <select id="usedStorageSize" parameterType="long" resultType="long">
+        select used_storage_size from tbl_storage where subscribe_id = #{subscribeId}
+    </select>
+
+    <!--저장 공간 업데이트 -->
+    <update id="update" parameterType="storageVO">
+        update tbl_storage
+        set member_id= #{memberId}, subscribe_id= #{subscribeId}, used_storage_size=#{usedStorageSize}, last_updated=CURRENT_TIMESTAMP
+        where subscribe_id = #{subscribeId}
+    </update>
+
+    <!-- 사용 중인 저장 공간-->
+    <select id="findBySubscribeId" parameterType="long" resultType="storageVO">
+        select storage_id, member_id, subscribe_id, used_storage_size, last_updated
+        from tbl_storage
+        where subscribe_id = #{subscribeId}
+    </select>
+</mapper>

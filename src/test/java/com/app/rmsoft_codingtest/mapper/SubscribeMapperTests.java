@@ -36,5 +36,21 @@ public class SubscribeMapperTests {
                 .build();
 
         subscribeMapper.insert(subscribeVO);
+        log.info("현재 시퀀스 값 : " + subscribeMapper.currentSequence());
     }
+    
+//    구독 찾기
+    @Test
+    public void findByIdTest(){
+        SubscribeVO subscribeVO = subscribeMapper.findById(3L);
+        
+        log.info("종료일 : " + subscribeVO.getSubscribeEndDate());
+    }
+
+//    현재 시퀀스값
+    @Test
+    public void currentSequenceTest(){
+        log.info("현재 시퀀스 값 : " + subscribeMapper.currentSequence());
+    }
+
 }

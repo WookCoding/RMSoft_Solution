@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 
 @Getter
 @ToString
-@Builder
-public class SubscribeDTO {
+public class DashboardDTO {
+
     private Long memberId;
     private String memberName;
     private String memberCompanyName;
@@ -26,4 +26,8 @@ public class SubscribeDTO {
     private Long subscribeStorageSize;
     private LocalDateTime subscribeStartDate;
     private LocalDateTime subscribeEndDate;
+
+    private Long dashboardId;
+    private Long subscribeRemainingStorage;
+    private Long subscribeRemainingPeriod;
 }

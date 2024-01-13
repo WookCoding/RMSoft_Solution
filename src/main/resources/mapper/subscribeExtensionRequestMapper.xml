@@ -8,4 +8,5 @@
             (member_id, subscribe_id, extension_period, request_date)
             values(#{memberId}, #{subscribeId}, #{extensionPeriod}, #{requestDate})
         </insert>
+
 </mapper>

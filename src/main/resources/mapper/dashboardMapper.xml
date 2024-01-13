@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.rmsoft_codingtest.mapper.DashboardMapper">
+
+    <!--    dashboardInsert -->
+    <insert id="insert" parameterType="dashboardVO">
+        insert into tbl_dashboard (member_id, subscribe_id, subscribe_remaining_storage, subscribe_remaining_period)
+        values (#{memberId}, #{subscribeId}, #{subscribeRemainingStorage}, #{subscribeRemainingPeriod})
+    </insert>
+
+    <!--dashboard check-->
+    <select id="dashboardCheck" parameterType="long" resultType="long">
+        select count(dashboard_id)
+        from tbl_dashboard
+        where subscribe_id = #{subscribeId}
+    </select>
+
+    <!-- dashboardVO -->
+    <select id="findBySubscribeId" parameterType="long" resultType="dashboardVO">
+        select dashboard_id, member_id, subscribe_id, subscribe_remaining_storage, subscribe_remaining_period
+        from tbl_dashboard
+        where subscribe_id = #{subscribeId}
+    </select>
+
+
+    <!-- dashboard Update-->
+    <update id="updateBySubscribeId" parameterType="dashboardVO">
+        update tbl_dashboard
+        set member_id=#{memberId},
+            subscribe_id=#{subscribeId},
+            subscribe_remaining_storage=#{subscribeRemainingStorage},
+            subscribe_remaining_period= #{subscribeRemainingPeriod}
+        where subscribe_id = #{subscribeId}
+    </update>
+
+    <!-- dashboard List-->
+    <select id="dashboardList" resultType="dashboardDTO">
+        select
+        m.member_id,
+        m.member_identification,
+        m.member_name,
+        m.member_company_name,
+        m.member_email,
+        m.member_phone_number,
+        s.subscribe_id,
+        s.subscribe_use_people,
+        s.subscribe_storage_size,
+        s.subscribe_start_date,
+        s.subscribe_end_date,
+        sf.subscribe_form_id,
+        sf.subscribe_form_type,
+        sf.subscribe_form_price,
+        sf.subscribe_form_period,
+        d.dashboard_id,
+        d.subscribe_remaining_storage,
+        d.subscribe_remaining_period
+        from
+        tbl_member m
+        join
+        tbl_subscribe s on m.member_id = s.member_id
+        join
+        tbl_subscribe_form sf on s.subscribe_form_id = sf.subscribe_form_id
+        join
+        tbl_dashboard d on m.member_id = d.member_id and s.subscribe_id = d.subscribe_id
+        <where>
+            <if test="memberId != null">
+                and m.member_id = #{memberId}
+            </if>
+            <if test="searchDTO.subscribeFormType != null and !searchDTO.subscribeFormType.isEmpty()">
+                and sf.subscribe_form_type = #{searchDTO.subscribeFormType}
+            </if>
+        </where>
+        order by s.subscribe_id desc
+    </select>
+
+
+</mapper>

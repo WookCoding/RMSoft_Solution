@@ -49,7 +49,7 @@ public class SubscribeFormServiceImpl implements SubscribeFormService {
                 .subscribeFormPeriod(subscribeFormVO.getSubscribeFormPeriod())
                 .build();
 
-        subscribeFormDAO.update(subscribeFormVO);
+        subscribeFormDAO.update(subscribeForm);
     }
 
 //    구독 버전 삭제

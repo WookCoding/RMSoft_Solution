@@ -37,5 +37,19 @@ public class SubscribeDAOTests {
                 .build();
 
         subscribeDAO.insert(subscribeVO);
+        log.info("현재 시퀀스 :: " + subscribeDAO.currentSequence());
+    }
+
+//    구독 찾기
+    @Test
+    public void findByIdTest(){
+        SubscribeVO subscribeVO = subscribeDAO.findById(1L);
+        log.info("종료일 : " + subscribeVO.getSubscribeEndDate());
+    }
+
+//    현재 시퀀스 값
+    @Test
+    public void currentSequenceTest(){
+        log.info("현재 시퀀스 :: " + subscribeDAO.currentSequence());
     }
 }

@@ -16,4 +16,13 @@ public class SubscribeDAO {
         subscribeMapper.insert(subscribeVO);
     }
 
+//    구독 찾기
+    public SubscribeVO findById(Long subscribeId){
+        return subscribeMapper.findById(subscribeId);
+    }
+
+//    현재 시퀀스 값
+    public Long currentSequence(){
+        return subscribeMapper.currentSequence();
+    }
 }

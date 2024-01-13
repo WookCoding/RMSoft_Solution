@@ -18,13 +18,16 @@ public class MemberMapperTests {
 //    회원가입 테스트
     @Test
     public void insertMemberTest(){
-        MemberVO memberVO = MemberVO.builder()
-                .memberName("임종욱")
-                .memberIdentification("test1234")
-                .memberPassword(new String(Base64.getEncoder().encode("hello".getBytes())))
-                .build();
+        for (int i = 0; i < 100; i++) {
+            MemberVO memberVO = MemberVO.builder()
+                    .memberName("임종욱" + (i + 1))
+                    .memberIdentification("test" + (i+1))
+                    .memberPassword(new String(Base64.getEncoder().encode(("hello"+(i+1)).getBytes())))
+                    .build();
 
-        memberMapper.insertMember(memberVO);
+            memberMapper.insertMember(memberVO);
+        }
+
     }
 
 //    로그인 테스트
